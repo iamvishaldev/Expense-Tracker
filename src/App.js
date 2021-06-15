@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Expenses from './components/Expenses/Expenses'
+import NewExpense from "./components/NewExpense/NewExpense";
 
 
 function App() {
@@ -26,8 +27,13 @@ function App() {
     },
   ];
 
+  const newExpenseHandler = (data)=>{
+    console.log("App",data)
+  }
+
   return (
     <div className="App">
+    <NewExpense onSubmitNewExpense={newExpenseHandler}/>
       <Expenses expenses={expenses}/>
     </div>
   );
